@@ -1,4 +1,4 @@
-package com.hocinebouarara.StudentMasterDegreeSpecialtyApplication.entity;
+package com.hocinebouarara.StudentMasterDegreeSpecialtyApplication.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

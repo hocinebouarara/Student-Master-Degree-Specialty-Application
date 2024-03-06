@@ -20,12 +20,6 @@ public class MasterBranchController {
         masterBranchService = theMasterBranchService;
     }
 
-    // get index page
-    @GetMapping("/")
-    public String startPage(){
-        return "index";
-    }
-
     @GetMapping("/specialties")
     public String specialtiesPage(Model model) {
 

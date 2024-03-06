@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibn Khaldoun Tiaret University</title>
+
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Link Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* styles.css */
+        body {
+            font-family: "Agency FB";
+            font-size: 20px;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-family: "Bauhaus 93";
+        }
+
+        /* Customizing the hero section */
+        .hero {
+            background-color: #333;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero .btn-primary {
+            background-color: #FFC107;
+            border-color: #FFC107;
+        }
+
+        /* Customizing the programs section */
+        .programs {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .programs h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .programs .card {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .programs .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .programs .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .programs .card-text {
+            font-size: 16px;
+        }
+
+        /* Customizing the footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h6 {
+            border: 2px solid black;
+            background-color: #B71C1C;
+            color: white;
+            padding: 10px 40px 10px 10px;
+            display: inline-block;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/home}" style="font-weight: bold; font-family: 'Bauhaus 93'">Ibn Khaldoun University</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/studies}">Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container mt-5 mb-3">
+        <h1>Welcome to Ibn Khaldoun Tiaret University</h1>
+        <p>Empowering minds, transforming lives</p>
+        <a href="#programs" class="btn btn-primary">Explore Programs</a>
+    </div>
+</header>
+
+<section class="about mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mb-4">About Ibn Khaldoun Tiaret University</h2>
+                <p>Ibn Khaldoun Tiaret University is a prestigious educational institution dedicated to providing quality education and fostering intellectual growth. With a strong focus on academic excellence, we aim to empower our students with knowledge and skills that will prepare them for success in their chosen fields.</p>
+                <p>Our university offers a wide range of programs and courses in various disciplines, including computer science, business administration, engineering, humanities, and more. We have a team of experienced faculty members who are passionate about teaching and guiding students towards their academic and professional goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="programs" class="programs">
+    <div class="container">
+        <h2>Our Programs</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-laptop card-icon fa-3x mt-4"></i>
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Computer Science</h3>
+                        <p class="card-text">Gain knowledge and skills in computer science and software development. Our program offers hands-on experience, industry partnerships, and a supportive learning environment.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-briefcase card-icon fa-3x mt-4"></i>
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Business Administration</h3>
+                        <p class="card-text">Develop the essential skills and knowledge for a successful career in business administration. Our program offers a comprehensive curriculum, experienced faculty, and opportunities for internships and networking.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <i class="fas fa-tools card-icon fa-3x mt-4"></i>
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Engineering</h3>
+                        <p class="card-text">Explore the field of engineering and gain hands-on experience in various disciplines. Our program prepares students for exciting careers in fields such as civil, mechanical, and electrical engineering.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a th:href="@{/studies}" class="btn btn-primary">Show All Programs</a>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="our-services">
+    <div class="container mb-5">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-book fa-3x"></i>
+                            <h4>Academic Programs</h4>
+                            <p>Explore our wide range of academic programs across various disciplines, designed to provide a comprehensive education and meet the needs of our students.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-laptop fa-3x"></i>
+                            <h4>Online Learning</h4>
+                            <p>Experience flexible and convenient online learning opportunities, allowing you to access course materials, participate in discussions, and engage with faculty from anywhere.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-users fa-3x"></i>
+                            <h4>Student Support</h4>
+                            <p>We are dedicated to providing exceptional student support services, including academic advising, career counseling, and extracurricular activities to enhance your university experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-flask fa-3x"></i>
+                            <h4>Research Opportunities</h4>
+                            <p>Engage in cutting-edge research projects and collaborate with renowned faculty members to contribute to the advancement of knowledge in your field of interest.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-globe fa-3x"></i>
+                            <h4>International Programs</h4>
+                            <p>Expand your horizons through our international programs, including exchange programs, study abroad opportunities, and partnerships with prestigious universities worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card">
+                            <i class="fas fa-graduation-cap fa-3x"></i>
+                            <h4>Graduate Studies</h4>
+                            <p>Pursue advanced studies and enhance your career prospects with our diverse range of graduate programs that provide specialized knowledge and research opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container mb-5">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2023 Ibn Khaldoun Tiaret University. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Link Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

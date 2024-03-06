@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibn Khaldoun Tiaret University</title>
+    <!-- Link Bootstrap CSS -->
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="styles.css"> <!-- Link your custom CSS file here -->
+
+
+    <style>
+        body{
+            font-family: 'Agency FB';
+            font-size: 18px;
+        }
+        .card {
+            border: 1px solid #131530;
+            background-color: #B0BEC5;
+        }
+
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'Bauhaus 93';
+            font-size: larger;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(23, 32, 32, 0.5);
+            cursor: pointer;
+        }
+        .card:hover h3{
+            color: #1A237E;
+        }
+
+        .card:focus {
+            border: 2px solid white;
+            outline: none;
+        }
+        .card-text{
+            color: white;
+            text-decoration: none;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" thhref="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Faculty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="header-section d-flex align-items-center text-white" style="height: 450px">
+    <div class="container pt-5 pb-5" style="margin-top: 58px; max-width: 100%;">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="container border-top border-bottom pt-4 pb-4 border-3 mx-auto" style="width: 70%">Welcome to Ibn Khaldoun University</h1>
+                <p>Explore student information, specialties, and more.</p>
+                <button type="button" class="btn btn-primary">Preinscription</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero" style="background-color: #1A237E">
+    <div class="container pt-5 pb-5">
+        <div class="row p-5 justify-content-center">
+            <div class="col-md-8 text-center text-white">
+                <h1 class="border-top border-bottom pt-4 pb-4 border-3 mx-auto">Welcome to Ibn Khaldoun Tiaret University</h1>
+                <p class="lead">Explore our academic programs and begin your journey to success.</p>
+                <a href="#" class="btn btn-primary btn-lg">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="admissions">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Admissions</h2>
+                <p>Discover the admission process and requirements for undergraduate and postgraduate programs.</p>
+                <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="programs">
+    <div class="container">
+        <h2>Academic Programs</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="program1.jpg" class="card-img-top" alt="Program 1">
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Science in Computer Science</h3>
+                        <p class="card-text">Prepare for a successful career in the field of computer science with our comprehensive program.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="program2.jpg" class="card-img-top" alt="Program 2">
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Business Administration</h3>
+                        <p class="card-text">Develop the essential skills and knowledge for a successful career in business administration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="program3.jpg" class="card-img-top" alt="Program 3">
+                    <div class="card-body">
+                        <h3 class="card-title">Bachelor of Arts in English Literature</h3>
+                        <p class="card-text">Explore the world of literature and enhance your language and communication skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faculty">
+    <div class="container">
+        <h2>Faculty</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="faculty1.jpg" class="card-img-top" alt="Faculty 1">
+                    <div class="card-body">
+                        <h3 class="card-title">Prof. John Smith</h3>
+                        <p class="card-text">Dean, College of Engineering</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="faculty2.jpg" class="card-img-top" alt="Faculty 2">
+                    <div class="card-body">
+                        <h3 class="card-title">Dr. Sarah Johnson</h3>
+                        <p class="card-text">Head of Department, Computer Science</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="faculty3.jpg" class="card-img-top" alt="Faculty 3">
+                    <div class="card-body">
+                        <h3 class="card-title">Prof. Emily Davis</h3>
+                        <p class="card-text">Chair, Department of Business Administration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>If you have any questions or need further information, please don't hesitate to contact us.</p>
+                <ul>
+                    <li>Email: info@ibnkhaldoununiversity.com</li>
+                    <li>Phone: +1234567890</li>
+                    <li>Address: 123 Main Street, Tiaret, Algeria</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-light text-center">
+    <p>&copy; 2023 Ibn Khaldoun Tiaret University. All rights reserved.</p>
+</footer>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+<!-- Link Bootstrap JS -->
+<script src="script.js"></script> <!-- Link your JavaScript file here -->
+</body>
+</html>

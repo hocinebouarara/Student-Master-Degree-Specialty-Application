@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome In The Master Degree</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <style>
+        body{
+            font-family: "Agency FB";
+            font-size: 20px;
+        }
+
+        .card-img-top {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'Bauhaus 93';
+            font-size: larger;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .card:focus {
+            border: 2px solid white;
+            outline: none;
+        }
+        .card-text{
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .custom-style {
+            background: linear-gradient(to right, #6f42c1, #8a2be2);
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+        }
+
+        .specialty-item {
+            border: 1px solid #000;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .specialty-link {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .specialty-content {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;  /* Adjust the margin as needed */
+        }
+
+        .specialty-content i {
+            margin-right: 0.5rem;  /* Adjust the margin as needed */
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+<!-- Header Section -->
+<div class="container-fluid p-0">
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}" style="font-weight: bold; font-family: 'Bauhaus 93'">Ibn Khaldoun University</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/studies}">Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main-section mt-3">
+        <div class="container mt-5 pt-5">
+            <h2 th:text="${specialty.name}"></h2>
+            <p th:text="${specialty.description}"></p>
+            <button type="button" class="btn btn-primary mt-3">Pre inscription</button>
+            <h5 class="mt-5 mb-2">Subjects</h5>
+
+            <table class="table table-striped mb-5">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Subject</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Coefficient</th>
+                    <th>Credits</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Iterate over the subjects and display them in table rows -->
+                <th:block th:each="subject,iterStat: ${subjects}">
+                    <tr>
+                        <td th:text="${iterStat.count}"></td>
+                        <td th:text="${subject.name}"></td>
+                        <td th:text="${subject.description}"></td>
+                        <td th:text="${subject.coefficient}"></td>
+                        <td th:text="${subject.credits}"></td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Ibn Khaldoun Tiaret University. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

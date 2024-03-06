@@ -1,0 +1,307 @@
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Dashboard</h1>
+</header>
+<div class="container">
+    <ul class="nav nav-tabs mt-4">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#teachers">Teachers</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#students">Students</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#specialties">Specialties</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#subjects">Subjects</a>
+        </li>
+    </ul>
+    <div class="tab-content content">
+        <div id="teachers" class="tab-pane fade show active">
+            <h2 class="mt-4 mb-3 text-center">Teachers</h2>
+            <a href="#" class="btn btn-primary mb-3">Add Teacher</a>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Display teachers' data from the database -->
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="students" class="tab-pane fade">
+            <h2 class="mt-4 mb-3 text-center">Students</h2>
+            <a href="#" class="btn btn-primary mb-3" id="addStudentButton">Add Student</a>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Gender</th>
+                        <th>Birth Date</th>
+                        <th>Birth Place</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Display students' data from the database -->
+                    <tr  th:each="student : ${students}">
+                        <td  th:text="${student.id}"></td>
+                        <td th:text="${student.firstName}"></td>
+                        <td th:text="${student.gender}"></td>
+                        <td th:text="${student.dateOfBirth}"></td>
+                        <td th:text="${student.placeOfBirth}"></td>
+                        <td th:text="${student.address}"></td>
+                        <td th:text="${student.email}"></td>
+                        <td th:text="${student.phoneNumber}"></td>
+                        <td>
+                            <!-- Add actions for each student, e.g., edit or delete -->
+                            <a class="btn btn-sm btn-primary" th:href="@{/students/edit/{id}(id=${student.id})}">
+                                <!--    <i class="fas fa-edit fa-2x"></i>    -->
+                                Edit
+                            </a>
+                            <a class="btn btn-sm btn-danger" th:href="@{/students/delete/{id}(id=${student.id})}">
+                                <!--    <i class="fas fa-trash fa-2x"></i>   -->
+                                Delete
+                            </a>
+                            <a class="btn btn-sm btn-info" th:href="@{/students/delete/{id}(id=${student.id})}">
+                                <!--    <i class="fas fa-trash fa-2x"></i>   -->
+                                Info
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="specialties" class="tab-pane fade">
+            <h2 class="mt-4 mb-3 text-center">Specialties</h2>
+            <a href="#" class="btn btn-primary mb-3">Add Specialty</a>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Display specialties' data from the database -->
+                    <tr>
+                        <td>1</td>
+                        <td>Mathematics</td>
+                        <td>Study of numbers, quantity, and space.</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="subjects" class="tab-pane fade">
+            <h2 class="mt-4 mb-3 text-center">Subjects</h2>
+            <a href="#" class="btn btn-primary mb-3">Add Subject</a>
+            <div class="card">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Specialty</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Display subjects' data from the database -->
+                    <tr>
+                        <td>1</td>
+                        <td>Algebra</td>
+                        <td>Mathematics</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Add Student -->
+<div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="addStudentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content pl-4 pr-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for adding a student -->
+                <form href="#" th:action="@{/save-student}" th:object="${student}" method="post">
+                    <div class="form-row mt-3">
+                        <div class="form-group col-md-4">
+                            <label for="documentType">Document Type</label>
+                            <select class="form-control" id="documentType">
+                                <option value="passport">Passport</option>
+                                <option value="nationalId">National ID</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="documentNumber">Document Number</label>
+                            <input type="text" class="form-control" id="documentNumber">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" th:field="*{student.firstName}">
+                            <p class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{student.firstName}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input type="date" class="form-control" id="dateOfBirth">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="placeOfBirth">Place of Birth</label>
+                            <input type="text" class="form-control" id="placeOfBirth">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" class="form-control" id="nationality">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="countryOfBirth">Country of Birth</label>
+                            <input type="text" class="form-control" id="countryOfBirth">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="bacNumber">Bac Number</label>
+                            <input type="text" class="form-control" id="bacNumber">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="bacYear">Bac Year</label>
+                            <input type="text" class="form-control" id="bacYear">
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+
+    // Open the modal when Add Student button is clicked
+    document.getElementById('addStudentButton').addEventListener('click', function () {
+        $('#addStudentModal').modal('show');
+    });
+
+
+
+
+</script>
+
+</body>
+
+</html>

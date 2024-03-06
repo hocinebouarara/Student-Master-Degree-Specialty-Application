@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -29,6 +30,13 @@ public class Specialty {
 
     @OneToMany(mappedBy = "specialty")
     private List<StudentChooseSpecialties> studentChooseSpecialties;
+
+    @OneToMany(mappedBy = "specialty")
+    private List<Subject> subjects;
+
+    @ManyToOne
+    @JoinColumn(name = "branch_id")
+    private MasterBranch branch;
 
 
 }

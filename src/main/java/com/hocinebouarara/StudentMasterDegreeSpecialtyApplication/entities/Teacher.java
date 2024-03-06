@@ -37,7 +37,7 @@ public class Teacher {
     private String address;
 
     @OneToMany(mappedBy = "teacher")
-    private List<StudentSubject> studentSubjects;
+    private List<Subject> subjects;
 
 }
 
